@@ -58,6 +58,7 @@ public class Calculadora extends javax.swing.JFrame {
         botonIgual = new javax.swing.JButton();
         botonPotencia = new javax.swing.JButton();
         botonInversa = new javax.swing.JButton();
+        btnPotenciaCubica = new javax.swing.JButton();
         etiquetaNumeros = new javax.swing.JLabel();
         etiquetaMuestra = new javax.swing.JLabel();
 
@@ -271,6 +272,15 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
         panel.add(botonInversa);
+
+        btnPotenciaCubica.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPotenciaCubica.setText("X³");
+        btnPotenciaCubica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPotenciaCubicaActionPerformed(evt);
+            }
+        });
+        panel.add(btnPotenciaCubica);
 
         etiquetaNumeros.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaNumeros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -569,6 +579,10 @@ public class Calculadora extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonInversaActionPerformed
 
+    private void btnPotenciaCubicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPotenciaCubicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPotenciaCubicaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -619,6 +633,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
+    private javax.swing.JButton btnPotenciaCubica;
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
     private javax.swing.JButton jButton28;
