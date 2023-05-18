@@ -56,12 +56,14 @@ public class Calculadora extends javax.swing.JFrame {
         jButton42 = new javax.swing.JButton();
         botonPunto = new javax.swing.JButton();
         botonIgual = new javax.swing.JButton();
+        jButton51 = new javax.swing.JButton();
+        btnCubicElevator = new javax.swing.JButton();
         etiquetaNumeros = new javax.swing.JLabel();
         etiquetaMuestra = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panel.setLayout(new java.awt.GridLayout(5, 4));
+        panel.setLayout(new java.awt.GridLayout(6, 4));
 
         botonC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botonC.setText("C");
@@ -252,6 +254,23 @@ public class Calculadora extends javax.swing.JFrame {
         });
         panel.add(botonIgual);
 
+        jButton51.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton51.setText("%");
+        jButton51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton51ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton51);
+
+        btnCubicElevator.setText("x³");
+        btnCubicElevator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCubicElevatorActionPerformed(evt);
+            }
+        });
+        panel.add(btnCubicElevator);
+
         etiquetaNumeros.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaNumeros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         etiquetaNumeros.setText("0");
@@ -263,7 +282,7 @@ public class Calculadora extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,6 +454,19 @@ public class Calculadora extends javax.swing.JFrame {
                 operacion = "nula";
             }
         }
+        else if (operacion.equals("porcentaje")){
+            segundoNumero = Double.parseDouble(cadenaNumeros);
+            resultado = primerNumero * segundoNumero / 100;
+            etiquetaNumeros.setText(String.format("% .2f",resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }
+        else if (operacion.equals("elevar_cubo")){
+            resultado = primerNumero*primerNumero*primerNumero;
+             etiquetaNumeros.setText(String.format("% .2f",resultado));
+             cadenaNumeros = String.valueOf(resultado);
+             operacion = "nula";         
+        }
         
         etiquetaMuestra.setText("");
         activado = true;
@@ -524,6 +556,28 @@ public class Calculadora extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonCEActionPerformed
 
+    private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
+        if(activado == true){
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText(cadenaNumeros + " % ");
+            cadenaNumeros = "";
+            operacion = "porcentaje";
+            
+            activado = false;
+        }
+    }//GEN-LAST:event_jButton51ActionPerformed
+
+    private void btnCubicElevatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCubicElevatorActionPerformed
+          if (activado == true) {
+              primerNumero = Double.parseDouble(cadenaNumeros) ;
+              etiquetaMuestra.setText(cadenaNumeros + "³") ;
+              cadenaNumeros = "";
+              operacion = "elevar_cubo" ;
+              
+              activado = false ;
+          }
+    }//GEN-LAST:event_btnCubicElevatorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -572,6 +626,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
+    private javax.swing.JButton btnCubicElevator;
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
     private javax.swing.JButton jButton28;
@@ -585,6 +640,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton51;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }
