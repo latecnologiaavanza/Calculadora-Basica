@@ -57,6 +57,7 @@ public class Calculadora extends javax.swing.JFrame {
         botonPunto = new javax.swing.JButton();
         botonIgual = new javax.swing.JButton();
         botonPotencia = new javax.swing.JButton();
+        botonInversa = new javax.swing.JButton();
         etiquetaNumeros = new javax.swing.JLabel();
         etiquetaMuestra = new javax.swing.JLabel();
 
@@ -261,6 +262,15 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
         panel.add(botonPotencia);
+
+        botonInversa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botonInversa.setText("1/X");
+        botonInversa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonInversaActionPerformed(evt);
+            }
+        });
+        panel.add(botonInversa);
 
         etiquetaNumeros.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaNumeros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -542,6 +552,23 @@ public class Calculadora extends javax.swing.JFrame {
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
     }//GEN-LAST:event_botonPotenciaActionPerformed
 
+    private void botonInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInversaActionPerformed
+        /*
+            Inversa 1/X = X^(-1)
+            Donde: 
+            'X' es el primerNumero
+        */
+        primerNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText(cadenaNumeros+"^(-1)");
+        if(primerNumero==0){
+            etiquetaNumeros.setText("No divisible por 0");
+        }else{
+            resultado = Math.pow(primerNumero, -1);
+            etiquetaNumeros.setText(String.format("%.2f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+        }
+    }//GEN-LAST:event_botonInversaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -585,6 +612,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonCE;
     private javax.swing.JButton botonDivision;
     private javax.swing.JButton botonIgual;
+    private javax.swing.JButton botonInversa;
     private javax.swing.JButton botonMultiplicar;
     private javax.swing.JButton botonPotencia;
     private javax.swing.JButton botonPunto;
