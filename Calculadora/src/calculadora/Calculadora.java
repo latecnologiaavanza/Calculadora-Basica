@@ -11,6 +11,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 /**
  *
  * @author Christian Ramirez
+ * TODO: Potenciacion al cuadrado
  */
 public class Calculadora extends javax.swing.JFrame {
 
@@ -57,6 +58,7 @@ public class Calculadora extends javax.swing.JFrame {
         botonPunto = new javax.swing.JButton();
         botonIgual = new javax.swing.JButton();
         jButton51 = new javax.swing.JButton();
+        botonPotenciaCuadrada = new javax.swing.JButton();
         etiquetaNumeros = new javax.swing.JLabel();
         etiquetaMuestra = new javax.swing.JLabel();
 
@@ -262,6 +264,14 @@ public class Calculadora extends javax.swing.JFrame {
         });
         panel.add(jButton51);
 
+        botonPotenciaCuadrada.setText("X²");
+        botonPotenciaCuadrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPotenciaCuadradaActionPerformed(evt);
+            }
+        });
+        panel.add(botonPotenciaCuadrada);
+
         etiquetaNumeros.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaNumeros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         etiquetaNumeros.setText("0");
@@ -273,7 +283,7 @@ public class Calculadora extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,7 +424,7 @@ public class Calculadora extends javax.swing.JFrame {
         
         else if(operacion.equals("sumar")){
             segundoNumero = Double.parseDouble(cadenaNumeros);
-            resultado = primerNumero + segundoNumero;;
+            resultado = primerNumero + segundoNumero;
             etiquetaNumeros.setText(String.format("% .2f",resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
@@ -451,8 +461,13 @@ public class Calculadora extends javax.swing.JFrame {
             etiquetaNumeros.setText(String.format("% .2f",resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
+        }else if(operacion.equals("potencia2")){                  
+            resultado = primerNumero * primerNumero;
+            etiquetaNumeros.setText(String.format("% .2f",resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";        
         }
-        
+                           
         etiquetaMuestra.setText("");
         activado = true;
         punto = false;
@@ -552,6 +567,17 @@ public class Calculadora extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton51ActionPerformed
 
+    private void botonPotenciaCuadradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPotenciaCuadradaActionPerformed
+        if(activado == true){
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText(cadenaNumeros+" ^ 2 ");
+            cadenaNumeros = "";
+            operacion = "potencia2";
+            
+            activado = false;
+        }
+    }//GEN-LAST:event_botonPotenciaCuadradaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -596,6 +622,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonDivision;
     private javax.swing.JButton botonIgual;
     private javax.swing.JButton botonMultiplicar;
+    private javax.swing.JButton botonPotenciaCuadrada;
     private javax.swing.JButton botonPunto;
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
