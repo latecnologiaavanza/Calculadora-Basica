@@ -58,6 +58,7 @@ public class Calculadora extends javax.swing.JFrame {
         botonIgual = new javax.swing.JButton();
         botonPotencia = new javax.swing.JButton();
         botonInversa = new javax.swing.JButton();
+        btnPotenciaCubica = new javax.swing.JButton();
         etiquetaNumeros = new javax.swing.JLabel();
         etiquetaMuestra = new javax.swing.JLabel();
 
@@ -272,6 +273,15 @@ public class Calculadora extends javax.swing.JFrame {
         });
         panel.add(botonInversa);
 
+        btnPotenciaCubica.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPotenciaCubica.setText("X³");
+        btnPotenciaCubica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPotenciaCubicaActionPerformed(evt);
+            }
+        });
+        panel.add(btnPotenciaCubica);
+
         etiquetaNumeros.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaNumeros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         etiquetaNumeros.setText("0");
@@ -306,145 +316,139 @@ public class Calculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "7";
-        }else{
+        } else {
             cadenaNumeros += "7";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "8";
-        }else{
+        } else {
             cadenaNumeros += "8";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "9";
-        }else{
+        } else {
             cadenaNumeros += "9";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "4";
-        }else{
+        } else {
             cadenaNumeros += "4";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "5";
-        }else{
+        } else {
             cadenaNumeros += "5";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "6";
-        }else{
+        } else {
             cadenaNumeros += "6";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "1";
-        }else{
+        } else {
             cadenaNumeros += "1";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "2";
-        }else{
+        } else {
             cadenaNumeros += "2";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton40ActionPerformed
 
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "3";
-        }else{
+        } else {
             cadenaNumeros += "3";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
-        if(etiquetaNumeros.getText().equals("0")){
+        if (etiquetaNumeros.getText().equals("0")) {
             cadenaNumeros = "0";
-        }else{
+        } else {
             cadenaNumeros += "0";
-        }     
+        }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true; //voy a usar la calculadora
     }//GEN-LAST:event_jButton42ActionPerformed
 
     private void botonSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumarActionPerformed
-        if(activado == true){
+        if (activado == true) {
             primerNumero = Double.parseDouble(cadenaNumeros);
             etiquetaMuestra.setText(cadenaNumeros + " + ");
             cadenaNumeros = "";
             operacion = "sumar";
-            
+
             activado = false;
         }
     }//GEN-LAST:event_botonSumarActionPerformed
 
     private void botonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIgualActionPerformed
         double segundoNumero;
-        if(operacion.equals("nula")){
+        if (operacion.equals("nula")) {
             etiquetaNumeros.setText(cadenaNumeros);
-        }
-        
-        else if(operacion.equals("sumar")){
+        } else if (operacion.equals("sumar")) {
             segundoNumero = Double.parseDouble(cadenaNumeros);
             resultado = primerNumero + segundoNumero;;
-            etiquetaNumeros.setText(String.format("% .2f",resultado));
+            etiquetaNumeros.setText(String.format("% .2f", resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
-        }
-        else if(operacion.equals("restar")){
+        } else if (operacion.equals("restar")) {
             segundoNumero = Double.parseDouble(cadenaNumeros);
             resultado = primerNumero - segundoNumero;;
-            etiquetaNumeros.setText(String.format("% .2f",resultado));
+            etiquetaNumeros.setText(String.format("% .2f", resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
-        }
-        
-        else if(operacion.equals("multiplicar")){
+        } else if (operacion.equals("multiplicar")) {
             segundoNumero = Double.parseDouble(cadenaNumeros);
             resultado = primerNumero * segundoNumero;;
-            etiquetaNumeros.setText(String.format("% .2f",resultado));
+            etiquetaNumeros.setText(String.format("% .2f", resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
-        }
-        else if (operacion.equals("dividir")) {
+        } else if (operacion.equals("dividir")) {
             segundoNumero = Double.parseDouble(cadenaNumeros);
             if (segundoNumero == 0) {
                 etiquetaNumeros.setText("NoSeDividePor0");
@@ -455,70 +459,70 @@ public class Calculadora extends javax.swing.JFrame {
                 operacion = "nula";
             }
         }
-        
+
         etiquetaMuestra.setText("");
         activado = true;
         punto = false;
     }//GEN-LAST:event_botonIgualActionPerformed
 
     private void botonMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMultiplicarActionPerformed
-        if(activado == true){
+        if (activado == true) {
             primerNumero = Double.parseDouble(cadenaNumeros);
             etiquetaMuestra.setText(cadenaNumeros + " x ");
             cadenaNumeros = "";
             operacion = "multiplicar";
-            
+
             activado = false;
         }
     }//GEN-LAST:event_botonMultiplicarActionPerformed
 
     private void botonRestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRestarActionPerformed
-        if(activado == true){
+        if (activado == true) {
             primerNumero = Double.parseDouble(cadenaNumeros);
             etiquetaMuestra.setText(cadenaNumeros + " - ");
             cadenaNumeros = "";
             operacion = "restar";
-            
+
             activado = false;
         }
     }//GEN-LAST:event_botonRestarActionPerformed
 
     private void botonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDivisionActionPerformed
-        if(activado == true){
+        if (activado == true) {
             primerNumero = Double.parseDouble(cadenaNumeros);
             etiquetaMuestra.setText(cadenaNumeros + " / ");
             cadenaNumeros = "";
             operacion = "dividir";
-            
+
             activado = false;
         }
     }//GEN-LAST:event_botonDivisionActionPerformed
 
     private void botonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRaizActionPerformed
         primerNumero = Double.parseDouble(cadenaNumeros);
-        etiquetaMuestra.setText("sqrt("+cadenaNumeros+")");
+        etiquetaMuestra.setText("sqrt(" + cadenaNumeros + ")");
         resultado = Math.sqrt(primerNumero);
         etiquetaNumeros.setText(String.format("%.2f", resultado));
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
     }//GEN-LAST:event_botonRaizActionPerformed
 
     private void botonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPuntoActionPerformed
-        if(punto == true){
-            if(cadenaNumeros.equals("")){
+        if (punto == true) {
+            if (cadenaNumeros.equals("")) {
                 cadenaNumeros = "0.";
-            }else{
+            } else {
                 cadenaNumeros += ".";
             }
             etiquetaNumeros.setText(cadenaNumeros);
             punto = false;
-        }              
+        }
     }//GEN-LAST:event_botonPuntoActionPerformed
 
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
-        if(cadenaNumeros.charAt(0) != '-'){ 
+        if (cadenaNumeros.charAt(0) != '-') {
             cadenaNumeros = "-" + cadenaNumeros;
-        }else{
-            cadenaNumeros = cadenaNumeros.substring(1,cadenaNumeros.length());
+        } else {
+            cadenaNumeros = cadenaNumeros.substring(1, cadenaNumeros.length());
         }
         etiquetaNumeros.setText(cadenaNumeros);
     }//GEN-LAST:event_jButton41ActionPerformed
@@ -533,12 +537,12 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCActionPerformed
 
     private void botonCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCEActionPerformed
-        int tamaño = cadenaNumeros.length(); 
-        if(tamaño > 0){
-            if(tamaño == 1){
+        int tamaño = cadenaNumeros.length();
+        if (tamaño > 0) {
+            if (tamaño == 1) {
                 cadenaNumeros = "0";
-            }else{
-                cadenaNumeros = cadenaNumeros.substring(0,cadenaNumeros.length() - 1);
+            } else {
+                cadenaNumeros = cadenaNumeros.substring(0, cadenaNumeros.length() - 1);
             }
             etiquetaNumeros.setText(cadenaNumeros);
         }
@@ -546,8 +550,8 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void botonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPotenciaActionPerformed
         primerNumero = Double.parseDouble(cadenaNumeros);
-        etiquetaMuestra.setText("potencia("+cadenaNumeros+")");
-        resultado = Math.pow(primerNumero,2);
+        etiquetaMuestra.setText("potencia(" + cadenaNumeros + ")");
+        resultado = Math.pow(primerNumero, 2);
         etiquetaNumeros.setText(String.format("%.2f", resultado));
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
     }//GEN-LAST:event_botonPotenciaActionPerformed
@@ -557,17 +561,29 @@ public class Calculadora extends javax.swing.JFrame {
             Inversa 1/X = X^(-1)
             Donde: 
             'X' es el primerNumero
-        */
+         */
         primerNumero = Double.parseDouble(cadenaNumeros);
-        etiquetaMuestra.setText(cadenaNumeros+"^(-1)");
-        if(primerNumero==0){
+        etiquetaMuestra.setText(cadenaNumeros + "^(-1)");
+        if (primerNumero == 0) {
             etiquetaNumeros.setText("No divisible por 0");
-        }else{
+        } else {
             resultado = Math.pow(primerNumero, -1);
             etiquetaNumeros.setText(String.format("%.2f", resultado));
             cadenaNumeros = String.valueOf(resultado);
         }
     }//GEN-LAST:event_botonInversaActionPerformed
+
+    private void btnPotenciaCubicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPotenciaCubicaActionPerformed
+        // modifica etiqueta en pantalla
+        etiquetaMuestra.setText("Potencia cúbica de (" + cadenaNumeros + ")");
+
+        // obtiene resultado
+        resultado = getPotenciaCubica(cadenaNumeros);
+
+        // imprime resultado en pantalla
+        etiquetaNumeros.setText(String.format("%.2f", resultado));
+        cadenaNumeros = String.valueOf(resultado);
+    }//GEN-LAST:event_btnPotenciaCubicaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -596,15 +612,19 @@ public class Calculadora extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        
         UIManager.setLookAndFeel("com.jtattoo.plaf.texture.TextureLookAndFeel");
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Calculadora().setVisible(true);
             }
         });
+    }
+
+    // obtener número al cubo
+    public double getPotenciaCubica(String entrada) {
+        return Math.pow(Double.parseDouble(entrada), 3);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -619,6 +639,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
+    private javax.swing.JButton btnPotenciaCubica;
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
     private javax.swing.JButton jButton28;
