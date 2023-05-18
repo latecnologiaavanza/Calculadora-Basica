@@ -59,6 +59,7 @@ public class Calculadora extends javax.swing.JFrame {
         botonPotencia = new javax.swing.JButton();
         botonInversa = new javax.swing.JButton();
         btnPotenciaCubica = new javax.swing.JButton();
+        btnPorcentaje = new javax.swing.JButton();
         etiquetaNumeros = new javax.swing.JLabel();
         etiquetaMuestra = new javax.swing.JLabel();
 
@@ -282,6 +283,15 @@ public class Calculadora extends javax.swing.JFrame {
         });
         panel.add(btnPotenciaCubica);
 
+        btnPorcentaje.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPorcentaje.setText("%");
+        btnPorcentaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPorcentajeActionPerformed(evt);
+            }
+        });
+        panel.add(btnPorcentaje);
+
         etiquetaNumeros.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaNumeros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         etiquetaNumeros.setText("0");
@@ -458,6 +468,23 @@ public class Calculadora extends javax.swing.JFrame {
                 cadenaNumeros = String.valueOf(resultado);
                 operacion = "nula";
             }
+        } //Se evaluar si la opreacion es el porncentaje
+        else if (operacion.equals("porcentaje")){
+            //Se obtiene el segundo numero
+           segundoNumero = Double.parseDouble(cadenaNumeros);
+           //Se evalua el caso si el segundo numero es 0 
+           if (segundoNumero == 0) {
+                etiquetaNumeros.setText("NoSeSacaPorcentajeDe0");
+            } else {
+               //En caso la operacion sea valida 
+               // se saca el porcentaje de los numeros
+                resultado = (primerNumero / 100) * segundoNumero;;
+                //Se pita el resultado
+                etiquetaNumeros.setText(String.format("% .2f", resultado));
+                //Se guarda el resultado
+                cadenaNumeros = String.valueOf(resultado);
+                operacion = "nula";
+            }
         }
 
         etiquetaMuestra.setText("");
@@ -585,6 +612,21 @@ public class Calculadora extends javax.swing.JFrame {
         cadenaNumeros = String.valueOf(resultado);
     }//GEN-LAST:event_btnPotenciaCubicaActionPerformed
 
+    private void btnPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPorcentajeActionPerformed
+        //Se Evalua el flag de activado para ver si la calculadora esta en uso
+        if (activado == true) {
+            //se obitne el primero numero
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            //Secoloca el simbolo del porcentaje
+            etiquetaMuestra.setText(cadenaNumeros + " % ");
+            cadenaNumeros = "";
+            //Valor que se evaluara cuando se necesite igualar
+            operacion = "porcentaje";
+
+            activado = false;
+        }
+    }//GEN-LAST:event_btnPorcentajeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -639,6 +681,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
+    private javax.swing.JButton btnPorcentaje;
     private javax.swing.JButton btnPotenciaCubica;
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
